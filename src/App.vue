@@ -64,21 +64,21 @@
     <!--绑定CSS-->
     <!--v-bind:class :class的使用-->
 
-    <div v-bind:class="{'red':flag}">
+    <div v-bind:class="{'red':flag, 'bule':!flag}">
       我是一个DIV
     </div>
 
-
-
-
     <div>
       <ul>
-        <li v-for="oo in list">
-          {{ oo }}
+        <li v-for="(oo,key) in list" :class="{'red':key==1}">
+          {{ oo }} - {{ key }}
         </li>
       </ul>
     </div>
 
+    <div class="box" v-bind:style="{width:boxWdith+'px'}">
+      我是一个用例Box的DIV
+    </div>
 
     <router-view/>
   </div>
@@ -92,7 +92,8 @@ export default { /* export default 表示把这个组件暴露出去 */
       msg: 'Welcome to Your Vue.js App',
       URL: 'https://img-blog.csdnimg.cn/20190603102934407.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDYwNzE=,size_16,color_FFFFFF,t_70',
       h: '<h1>我是一个标题</h1>',
-      flag: true,
+      flag: false,
+      boxWdith: 300,
       obj: {
         name: '张三'
       },
@@ -143,5 +144,15 @@ export default { /* export default 表示把这个组件暴露出去 */
 
 .red{
   color: #ff0001;
+}
+.bule{
+  color: #0074D9;
+}
+.box{
+  height: 100px;
+
+  width: 100px;
+
+  background: #01ff8e;
 }
 </style>
