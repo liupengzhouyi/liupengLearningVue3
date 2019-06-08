@@ -10,8 +10,7 @@
         >
           女朋友A
         </a>
-      </li>
-      <li>
+
         <a
           href="https://forum.vuejs.org"
           target="_blank"
