@@ -14,6 +14,10 @@
       获取表单数据
     </button>
 
+    <button v-on:click="setMsg()">
+      设置表单数据
+    </button>
+
     <h2>
       Essential Links
     </h2>
@@ -137,6 +141,9 @@ export default { /* export default 表示把这个组件暴露出去 */
   methods: { /* 放置方法的地方 */
     getMsg() {
       alert(this.msg)
+    },
+    getMsg() {
+      this.msg = 'new Data'
     }
   }
 }
