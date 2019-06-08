@@ -5,6 +5,15 @@
     <h1>
       {{ msg }}
     </h1>
+
+
+    <input type="text" v-model="msg">
+
+
+    <button v-on:click="getMsg()">
+      获取表单数据
+    </button>
+
     <h2>
       Essential Links
     </h2>
@@ -80,6 +89,8 @@
       我是一个用例Box的DIV
     </div>
 
+
+
     <router-view/>
   </div>
 </template>
@@ -90,7 +101,8 @@ export default { /* export default 表示把这个组件暴露出去 */
   data () { /* 业务逻辑里面的数据 */
     return {
       msg: 'Welcome to Your Vue.js App',
-      URL: 'https://img-blog.csdnimg.cn/20190603102934407.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDYwNzE=,size_16,color_FFFFFF,t_70',
+      URL: 'https://img-blog.csdnimg.cn/20190603102934407.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk' +
+        ',shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDYwNzE=,size_16,color_FFFFFF,t_70',
       h: '<h1>我是一个标题</h1>',
       flag: false,
       boxWdith: 300,
@@ -120,13 +132,11 @@ export default { /* export default 表示把这个组件暴露出去 */
           ]
         }
       ]
-
-
-
-
-
-
-
+    }
+  },
+  methods: { /* 放置方法的地方 */
+    getMsg() {
+      alert(this.msg)
     }
   }
 }
