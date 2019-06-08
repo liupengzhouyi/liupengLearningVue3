@@ -43,6 +43,43 @@
       </li>
     </ul>
 
+    <!--<img v-bind:src="URL" />-->
+
+    <div v-bind:title="msg">
+      鼠标停留在上面看一下
+    </div>
+
+
+
+    <!--<img :src="URL" />-->
+
+    <!--绑定HTML-->
+
+    <div v-html="h"></div>
+
+    <!--绑定数据的另一种方式-->
+
+    <div v-text="msg"></div>
+
+    <!--绑定CSS-->
+    <!--v-bind:class :class的使用-->
+
+    <div v-bind:class="{'red':flag}">
+      我是一个DIV
+    </div>
+
+
+
+
+    <div>
+      <ul>
+        <li v-for="oo in list">
+          {{ oo }}
+        </li>
+      </ul>
+    </div>
+
+
     <router-view/>
   </div>
 </template>
@@ -53,6 +90,9 @@ export default { /* export default 表示把这个组件暴露出去 */
   data () { /* 业务逻辑里面的数据 */
     return {
       msg: 'Welcome to Your Vue.js App',
+      URL: 'https://img-blog.csdnimg.cn/20190603102934407.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDYwNzE=,size_16,color_FFFFFF,t_70',
+      h: '<h1>我是一个标题</h1>',
+      flag: true,
       obj: {
         name: '张三'
       },
@@ -79,6 +119,13 @@ export default { /* export default 表示把这个组件暴露出去 */
           ]
         }
       ]
+
+
+
+
+
+
+
     }
   }
 }
@@ -92,5 +139,9 @@ export default { /* export default 表示把这个组件暴露出去 */
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.red{
+  color: #ff0001;
 }
 </style>
