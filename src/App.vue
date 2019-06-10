@@ -6,9 +6,11 @@
       {{ msg }}
     </h1>
 
+    <div ref="box001">
+      我是一个box
+    </div>
 
     <input type="text" v-model="msg">
-
 
     <button v-on:click="getMsg()">
       获取表单数据
@@ -93,6 +95,20 @@
       我是一个用例Box的DIV
     </div>
 
+    <input type="text" ref="userinfo">
+
+    <button v-on:click="getInputValue">获取第二个表单中的数据</button>
+
+
+    <button v-on:click="addData()">
+      请求数据
+    </button>
+
+    <ul>
+      <li v-for="itme in myList">
+        {{ itme }}
+      </li>
+    </ul>
 
 
     <router-view/>
@@ -109,6 +125,7 @@ export default { /* export default 表示把这个组件暴露出去 */
         ',shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM3NDYwNzE=,size_16,color_FFFFFF,t_70',
       h: '<h1>我是一个标题</h1>',
       flag: false,
+      myList: [],
       boxWdith: 300,
       obj: {
         name: '张三'
@@ -142,8 +159,18 @@ export default { /* export default 表示把这个组件暴露出去 */
     getMsg() {
       alert(this.msg)
     },
-    getMsg() {
+    setMsg() {
       this.msg = 'new Data'
+    },
+    getInputValue() {
+      console.log(this.$refs.userinfo);
+      alert(this.$refs.userinfo.value);
+      this.$refs.box001.style.background = 'red';
+    },
+    addData() {
+      for (var i =0; i<5;i++) {
+        this.myList.push(i);
+      }
     }
   }
 }
