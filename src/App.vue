@@ -65,6 +65,9 @@
     </div>
 
 
+    <button v-on:click="del777ete('12345')">
+      执行方法传值
+    </button>
 
     <!--<img :src="URL" />-->
 
@@ -97,7 +100,7 @@
 
     <input type="text" ref="userinfo">
 
-    <button v-on:click="getInputValue">获取第二个表单中的数据</button>
+    <button v-on:click="getInputValue()">获取第二个表单中的数据</button>
 
 
     <button v-on:click="addData()">
@@ -109,6 +112,13 @@
         {{ itme }}
       </li>
     </ul>
+
+
+
+
+
+
+
 
 
     <router-view/>
@@ -156,6 +166,9 @@ export default { /* export default 表示把这个组件暴露出去 */
     }
   },
   methods: { /* 放置方法的地方 */
+    del777ete(val) {
+      alert(val);
+    },
     getMsg() {
       alert(this.msg)
     },
@@ -171,7 +184,8 @@ export default { /* export default 表示把这个组件暴露出去 */
       for (var i =0; i<5;i++) {
         this.myList.push(i);
       }
-    }
+    },
+
   }
 }
 </script>
