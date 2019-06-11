@@ -114,6 +114,9 @@
     </ul>
 
 
+    <button data-aid="1231234" @click="eventFn($event)">
+      事件对象
+    </button>
 
 
 
@@ -184,6 +187,10 @@ export default { /* export default 表示把这个组件暴露出去 */
       for (var i =0; i<5;i++) {
         this.myList.push(i);
       }
+    },
+    eventFn(e) {
+      console.log(e);
+      e.srcElement.style.background = 'red';
     },
 
   }
