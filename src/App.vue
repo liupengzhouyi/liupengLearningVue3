@@ -118,10 +118,9 @@
       事件对象
     </button>
 
-
-
-
-
+    <button v-on:click="paly()">
+      重定向
+    </button>
 
 
     <router-view/>
@@ -192,6 +191,9 @@ export default { /* export default 表示把这个组件暴露出去 */
       console.log(e);
       e.srcElement.style.background = 'red';
     },
+    paly() {
+      this.$router.push('/test')
+    }
 
   }
 }
